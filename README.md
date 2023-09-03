@@ -1,32 +1,28 @@
+Claro, aquí tienes el texto con algunas mejoras en la claridad:
 
-# InvertirOnline.com Coding Challenge
+# InvertirOnline.com Coding Challenge - Rodrigo Alonso
 
-Bienvenido!
+## Detalles generales
 
-Nos encontramos en la búsqueda de desarrolladores .NET para que se incorporen a nuestro equipo. Después de múltiples procesos de selección, llegamos a la conclusión de que el código habla por si mismo. Con lo cual si te sentís dispuesto a afrontar el desafío, por favor tomate un rato para jugar con el problema y resolverlo.
+Por una preferencia personal y dado que el desafío lo permitía, opté por cambiar el idioma de las clases, métodos y propiedades al inglés.
 
-### Cómo participar del proceso?
+## Solución
 
-Abajo detallamos el problema a resolver, cuando consideres que está resuelto, **no** envíes pull request. Enviá un mail a busquedas.it@invertironline.com con tu resolución (con un link de descarga al repositorio de tu preferencia), y si tenés algún comentario sobre tu implementación, también podés agregarlo ahí.
+El objetivo principal era facilitar la incorporación de nuevas figuras geométricas y la adición de idiomas de manera más dinámica.
 
-### El problema
+La clase original "FormaGeométrica" fue reemplazada por una clase llamada "GeometricShapeHandler". Esta última recibe la funcionalidad de manejar diferentes idiomas a través de la inyección de dependencias desde la clase "LanguageHelper".
 
-Tenemos un método que genera un reporte en base a una colección de formas geométricas, procesando algunos datos para presentar información extra. La firma del método es:
+Para agregar una nueva figura geométrica, simplemente se debe crear una clase en la carpeta **shapes** y hacer que herede de la clase base "GeometricShape". Luego, se implementa la lógica correspondiente para calcular el área, el perímetro y la cantidad de lados, entre otros atributos.
+
+La incorporación de un nuevo idioma requiere la creación de un archivo .resx en la carpeta **Languages** siguiendo el formato: "strings.<idiomaDeseado>.resx", por ejemplo, **strings.de.resx** para el idioma alemán. En este archivo, se deben respetar las claves del archivo original y reemplazar los valores por los mensajes en el idioma correspondiente. Finalmente, se debe agregar el idioma en la clase "Language.cs", ya que este objeto se utiliza en el método "Print" de la clase "GeometricShapeHandler":
 
 ```csharp
-public static string Imprimir(List<FormaGeometrica> formas, int idioma)
+public static class Language
+{
+    public const string English = "en";
+    public const string Spanish = "es";
+    public const string French = "fr";
+    public const string Italian = "it";
+    public const string German = "de"; <-- Nuevo idioma
+}
 ```
-
-Al mismo tiempo, encontramos muy díficil el poder agregar o bien una nueva forma geométrica, o imprimir el reporte en otro idioma. Nos gustaría poder dar soporte para que el usuario pueda agregar otros tipos de formas u obtener el reporte en otros idiomas, pero extender la funcionalidad del código es muy doloroso. ¿Nos podrías dar una mano a refactorear la clase FormaGeometrica? Dentro del código encontrarás un TODO con nuevos requerimientos a satisfacer una vez completada la refactorización.
-
-Acompañando al proyecto encontrarás una serie de tests unitarios (librería NUnit) que describen el comportamiento del método Imprimir. **Se puede modificar cualquier cosa del código y de los tests, con la única condición que los tests deben pasar correctamente al entregar la solución.** 
-
-Se agradece también la inclusión de nuevos tests unitarios para validar el comportamiento de la nueva funcionalidad agregada.
-
-### Cómo funciona
-
-Lo que te encontrás al levantar la .sln es una librería con el objeto de negocio FormaGeometrica, y un pequeño proyecto con test unitarios sobre el método de impresión de reporte.
-
-La resolución es libre y cómo encarar el problema queda en el criterio de quien lo resuelva!
-
-**¡¡Buena suerte!!**
