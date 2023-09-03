@@ -29,7 +29,7 @@ public class MyNewShape : GeometricShape
 ```
 
 ## Agregar nuevo idioma
-La incorporación de un nuevo idioma requiere la creación de un archivo .resx en la carpeta **Languages** siguiendo el formato: "strings.<idiomaDeseado>.resx", por ejemplo, **strings.de.resx** para el idioma alemán.
+La incorporación de un nuevo idioma requiere la creación de un archivo .resx en la carpeta **Languages** siguiendo el formato: "strings.idiomaDeseado.resx", por ejemplo, **strings.de.resx** para el idioma alemán.
 
 ![image](https://github.com/rodrigoalonso91/IOL-CodingChallenge/assets/77740217/d65dd1ac-15ff-4745-8000-73b5890cda8d)
 
