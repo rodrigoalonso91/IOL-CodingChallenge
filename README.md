@@ -6,6 +6,12 @@ Claro, aquí tienes el texto con algunas mejoras en la claridad:
 
 Por una preferencia personal y dado que el desafío lo permitía, opté por cambiar el idioma de las clases, métodos y propiedades al inglés.
 
+## Antes que nada
+
+- Ejecutar Nuget Restore
+- Ejecutar compilación
+- Correr los test
+
 ## Solución
 
 El objetivo principal era facilitar la incorporación de nuevas figuras geométricas y la adición de idiomas de manera más dinámica.
